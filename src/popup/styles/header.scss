@@ -1,0 +1,76 @@
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: var(--spacing-sm) 0; /* Adjusted padding */
+	margin-bottom: var(--spacing-lg);
+	border-bottom: 1px solid var(--border-primary);
+
+	.header__logo-title {
+		display: flex;
+		align-items: center;
+		gap: var(--spacing-sm);
+
+		img.header__logo {
+			width: 28px; /* Adjust size as needed */
+			height: 28px;
+		}
+
+		h1 {
+			font-size: 1.25em; /* Slightly larger than previous 18px */
+			color: var(--accent-primary);
+			font-weight: 600;
+			letter-spacing: normal; /* Reset letter-spacing if previously set */
+			margin: 0;
+		}
+	}
+
+	.settings__icon {
+		display: inline-flex;
+		width: 22px; /* Consistent sizing */
+		height: 22px;
+		cursor: pointer;
+		* {
+			stroke: var(--text-secondary);
+			transition: stroke 0.2s ease-in-out;
+		}
+		&:hover {
+			* {
+				stroke: var(--text-primary);
+			}
+		}
+	}
+
+	/* Action icons container */
+	.header__actions {
+		display: flex;
+		align-items: center;
+		gap: var(--spacing-md);
+	}
+
+	/* Info and Docs icon styles match settings */
+	.info__icon, .docs__icon {
+		display: inline-flex;
+		width: 22px;
+		height: 22px;
+		cursor: pointer;
+		* {
+			stroke: var(--text-secondary);
+			transition: stroke 0.2s ease-in-out;
+		}
+		&:hover {
+			* {
+				stroke: var(--text-primary);
+			}
+		}
+	}
+
+	/* Accent-colored action icons */
+	.header__actions span * {
+		stroke: var(--accent-primary);
+		transition: stroke 0.2s ease-in-out;
+	}
+	.header__actions span:hover * {
+		stroke: var(--accent-primary-hover);
+	}
+}

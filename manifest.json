@@ -1,0 +1,47 @@
+{
+  "name": "LeetX+",
+  "description": "AI-powered LeetX+: Automatically solves coding interview problems directly in your browser.",
+  "version": "1.0.0",
+  "author": "Joydip Biswas",
+  "homepage_url": "https://github.com/jd316/LeetXplus",
+  "icons": {
+    "16": "src/assets/logo-16.png",
+    "32": "src/assets/logo-32.png",
+    "48": "src/assets/logo-48.png",
+    "128": "src/assets/logo-128.png"
+  },
+  "manifest_version": 3,
+  "background": {
+      "service_worker": "src/background/background.js"
+  },
+  "host_permissions": ["<all_urls>"],
+  "content_scripts": [
+    {
+      "matches": ["*://*.leetcode.com/*", "*://leetcode.com/*", "*://*.leetcode.cn/*", "*://leetcode.cn/*"],
+      "js": ["src/content/content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "options_ui": {
+    "page": "src/options/options.html",
+    "open_in_tab": true
+  },
+  "permissions": ["webRequest", "storage", "tabs", "sidePanel"],
+  "side_panel": {
+    "default_path": "index.html"
+  },
+  "action": {
+    "default_icon": {
+      "16": "src/assets/logo-16.png",
+      "32": "src/assets/logo-32.png",
+      "48": "src/assets/logo-48.png"
+    },
+    "default_title": "LeetX+"
+  },
+  "web_accessible_resources": [
+   {
+     "resources": ["src/content/contentScript.js"],
+     "matches": ["*://*.leetcode.com/*", "*://leetcode.com/*", "*://*.leetcode.cn/*", "*://leetcode.cn/*"]
+   }
+ ]
+}

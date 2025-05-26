@@ -1,0 +1,348 @@
+:root {
+  /* Typography */
+  --font-family-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-family-monospace: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+
+  /* Base Colors (Inspired by GitHub Dark & ChatGPT) */
+  --bg-primary: #202123; /* ChatGPT-like very dark gray */
+  --bg-secondary: #282A2E; /* Slightly lighter for secondary surfaces */
+  --bg-tertiary: #343541; /* For elements like input fields, hover states */
+  --bg-hover: #3E404A; /* Hover state for interactive elements */
+  --bg-selected: #4A4C5A; /* Selected state */
+
+  --text-primary: #ECECF1; /* Off-white, high contrast for readability */
+  --text-secondary: #A9AAB0; /* Lighter gray for secondary text, placeholders */
+  --text-disabled: #7A7A80;  /* For disabled elements */
+  --text-accent: #58A6FF; /* Using a common blue accent, can be tweaked to logo's blue */
+
+  --border-primary: #3A3B43;  /* Subtle borders */
+  --border-secondary: #4D4E57; /* Slightly more prominent borders if needed */
+  --border-focus: var(--accent-primary); /* Accent color for focus rings */
+
+  /* Accents & Status */
+  --accent-primary: #4A90E2; /* Main accent from logo */
+  --accent-primary-hover: #60AFFF; /* Lighter shade for hover */
+  --accent-secondary: #6E7681; /* A secondary, more neutral accent if needed */
+
+  --success-primary: #28A745; /* Green for success (e.g., Bootstrap success green) */
+  --success-bg: rgba(40, 167, 69, 0.15);
+  --error-primary: #DC3545;   /* Red for error (e.g., Bootstrap danger red) */
+  --error-bg: rgba(220, 53, 69, 0.15);
+  --warning-primary: #FFC107; /* Yellow for warning */
+  --warning-bg: rgba(255, 193, 7, 0.15);
+
+  /* Buttons */
+  --button-primary-bg: var(--accent-primary);
+  --button-primary-text: #FFFFFF;
+  --button-primary-hover-bg: var(--accent-primary-hover);
+
+  --button-secondary-bg: var(--bg-tertiary);
+  --button-secondary-text: var(--text-primary);
+  --button-secondary-hover-bg: var(--bg-hover);
+
+  --button-danger-bg: var(--error-primary);
+  --button-danger-text: #FFFFFF;
+  --button-danger-hover-bg: #C82333; /* Darker red for hover */
+
+  /* Input Fields */
+  --input-bg: var(--bg-secondary);
+  --input-border: var(--border-primary);
+  --input-text: var(--text-primary);
+  --input-placeholder: var(--text-secondary);
+  --input-focus-border: var(--accent-primary);
+
+  /* Scrollbar (Webkit) - more subtle */
+  --scrollbar-thumb-bg: #555;
+  --scrollbar-track-bg: var(--bg-secondary);
+  --scrollbar-thumb-hover-bg: #777;
+
+  /* Spacing & Radius */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 12px;
+  --spacing-lg: 16px;
+  --spacing-xl: 24px;
+  --radius-sm: 3px;
+  --radius-md: 5px;
+  --radius-lg: 8px;
+
+  /* Elevations/Shadows (subtle) */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
+  --shadow-md: 0 3px 6px -1px rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.15), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
+}
+
+/* Global styles */
+body {
+  font-family: var(--font-family-sans);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scroll on body */
+  line-height: 1.6;
+  font-size: 14px; /* Base font size */
+}
+
+/* Basic reset for common elements */
+h1, h2, h3, h4, h5, h6, p {
+  margin-top: 0;
+  margin-bottom: var(--spacing-md);
+}
+
+h1 { font-size: 1.8em; font-weight: 600; }
+h2 { font-size: 1.5em; font-weight: 600; }
+h3 { font-size: 1.25em; font-weight: 600; }
+
+a {
+  color: var(--accent-primary);
+  text-decoration: none;
+  &:hover {
+    color: var(--accent-primary-hover);
+    text-decoration: underline;
+  }
+}
+
+/* More subtle scrollbars for WebKit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb-bg);
+  border-radius: var(--radius-sm);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover-bg);
+}
+
+/* Basic form element styling */
+input,
+textarea,
+select,
+button {
+  font-family: inherit;
+  font-size: inherit;
+  color: var(--input-text);
+  background-color: var(--input-bg);
+  border: 1px solid var(--input-border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-sm) var(--spacing-md);
+  box-sizing: border-box;
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--input-focus-border);
+  box-shadow: 0 0 0 2px rgba(var(--accent-primary), 0.25); /* Using RGB for box-shadow with opacity */
+}
+
+button {
+  cursor: pointer;
+}
+
+/* Utility classes */
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.items-center { align-items: center; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.text-center { text-align: center; }
+.mt-1 { margin-top: var(--spacing-sm); }
+.mb-1 { margin-bottom: var(--spacing-sm); }
+.p-1 { padding: var(--spacing-sm); }
+// Add more utilities as needed
+
+.h-100 {
+  height: 100%;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.error-text {
+  color: var(--error-primary);
+  margin-bottom: 0;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.align-between {
+  align-content: space-between;
+}
+
+.align-start {
+  align-items: start;
+}
+
+.align-end {
+  align-items: end;
+}
+
+.justify-start {
+  justify-content: start;
+}
+
+.justify-end {
+  justify-content: end;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-row-reverse {
+  flex-direction: row-reverse;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+/*
+  text colors
+*/
+
+/*
+  margins
+*/
+
+.mt-2 {
+  margin-top: 20px;
+}
+
+.mb-2 {
+  margin-bottom: 20px;
+}
+
+.mb-3 {
+  margin-bottom: 30px;
+}
+
+.mb-4 {
+  margin-bottom: 40px;
+}
+
+.mr-1 {
+  margin-right: 10px;
+}
+
+.mr-2 {
+  margin-right: 20px;
+}
+
+.mr-3 {
+  margin-right: 30px;
+}
+
+.ml-1 {
+  margin-left: 10px;
+}
+
+.ml-2 {
+  margin-left: 20px;
+}
+
+.ml-3 {
+  margin-left: 30px;
+}
+
+.pr-1 {
+  padding-right: 10px;
+}
+
+.pr-2 {
+  padding-right: 20px;
+}
+
+.pr-3 {
+  padding-right: 30px;
+}
+
+.pr-4 {
+  padding-right: 40px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.half-width {
+  width: 50%;
+}
+
+.no-wrap {
+  white-space: nowrap;
+}
+
+.quarter-width {
+  width: 25%;
+}
+
+.three-quarters-width {
+  width: 75%;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.default-image {
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+}
+
+.avatar {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.remove-decor {
+  text-decoration: none;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.content-wrapper {
+  min-height: 80vh;
+}
+
+.flex-grow {
+  flex: 1;
+}
+
+.position-absolute {
+  position: absolute;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.unscrollable {
+  max-height: 100vh !important;
+  overflow: hidden;
+}

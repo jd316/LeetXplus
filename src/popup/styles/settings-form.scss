@@ -1,0 +1,88 @@
+.settings-form {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  padding: var(--spacing-lg);
+  gap: var(--spacing-lg);
+  background-color: var(--bg-secondary);
+
+  .settings-form__title {
+    margin-bottom: var(--spacing-md);
+    font-size: 1.5em;
+    font-weight: 600;
+    color: var(--accent-primary);
+  }
+
+  .settings-form__guide {
+    margin-bottom: var(--spacing-lg);
+    background-color: var(--bg-tertiary);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    color: var(--text-secondary);
+    font-size: 0.9em;
+
+    p {
+      margin: 0 0 var(--spacing-sm);
+      color: var(--text-secondary);
+    }
+    a {
+      color: var(--accent-primary);
+      text-decoration: none;
+      &:hover { color: var(--accent-primary-hover); }
+    }
+    strong { color: var(--text-primary); }
+    code {
+      background-color: var(--bg-secondary);
+      color: var(--text-accent);
+      padding: var(--spacing-xs) var(--spacing-sm);
+      border-radius: var(--radius-sm);
+      display: inline-block;
+      max-width: 100%;
+      white-space: pre-wrap;
+      overflow-wrap: break-word;
+      word-break: break-word;
+    }
+    ol {
+      margin-left: var(--spacing-md);
+      li { margin-bottom: var(--spacing-xs); }
+      ol { margin-left: var(--spacing-md); }
+    }
+  }
+
+  .settings-form__item {
+    margin-bottom: var(--spacing-md);
+    label {
+      font-weight: 500;
+      color: var(--text-primary);
+      margin: 0;
+    }
+    input {
+      width: 100%;
+      padding: var(--spacing-sm) var(--spacing-md);
+      box-sizing: border-box;
+      background-color: var(--input-bg);
+      color: var(--input-text);
+      border: 1px solid var(--input-border);
+      border-radius: var(--radius-md);
+
+      &::placeholder { color: var(--input-placeholder); }
+    }
+  }
+
+  .settings-form__buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-lg);
+  }
+
+  .settings-form__status {
+    margin-top: var(--spacing-md);
+    color: var(--success-primary);
+    font-size: 0.9em;
+    text-align: center;
+  }
+} 

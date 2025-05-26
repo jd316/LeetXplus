@@ -1,0 +1,29 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="logoGradient" x1="0.5" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" style="stop-color:#28A7A6;"/> <!-- Softer, more bluish-teal -->
+      <stop offset="100%" style="stop-color:#4A90E2;"/> <!-- Blue -->
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="#10121A"/>
+
+  <!-- Logo Icon (100x100 units) -->
+  <!-- The path below defines the specific 'X' shape with two rounded outer corners (top-left, bottom-right) 
+       and two sharp outer corners (top-right, bottom-left), matching the style of the image. -->
+  <g transform="translate(50, 35)"> 
+    <path d="M 15,0 L 35,0 L 50,30 L 65,0 L 100,0 L 100,35 L 70,50 L 100,65 L 100,85 Q 100,100 85,100 L 65,100 L 50,70 L 35,100 L 0,100 L 0,65 L 30,50 L 0,35 L 0,15 Q 0,0 15,0 Z" fill="url(#logoGradient)"/>
+  </g>
+  
+  <!-- Text -->
+  <!-- Text is centered. The '+' is styled as a superscript. -->
+  <text x="100" y="165" 
+        font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif" 
+        font-size="28" 
+        font-weight="bold" 
+        fill="url(#logoGradient)" 
+        text-anchor="middle">
+    LeetX<tspan font-size="80%" style="baseline-shift: super;">+</tspan>
+  </text>
+</svg>

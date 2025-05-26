@@ -1,0 +1,79 @@
+// Center the panel container using fixed positioning
+.onboarding-panel {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  padding: 24px;
+  width: 100%;
+  max-width: 360px;
+  max-height: 90%;
+  overflow-y: auto;
+  background-color: #1e1e1e;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+
+  &__logo {
+    width: 64px;
+    margin: 0 auto 16px;
+    display: block;
+  }
+
+  &__subtitle {
+    font-size: 1rem;
+    margin-bottom: 12px;
+    color: #ccc;
+    text-align: center;
+  }
+
+  h2 {
+    margin: 0 0 16px;
+    text-align: center;
+  }
+
+  &__steps {
+    margin: 0 0 24px;
+    padding-left: 20px;
+    list-style-position: inside;
+    color: #ddd;
+
+    li {
+      margin-bottom: 12px;
+      line-height: 1.4;
+
+      img.onboarding-panel__step-icon {
+        vertical-align: middle;
+        margin-right: 8px;
+      }
+    }
+  }
+
+  &__button {
+    display: block;
+    margin: 0 auto 16px;
+  }
+
+  &__footer {
+    text-align: center;
+
+    small {
+      color: #777;
+      font-size: 0.875rem;
+    }
+
+    a {
+      color: #4ea1f3;
+      text-decoration: none;
+      margin-left: 4px;
+    }
+  }
+}
+
+// Icon in a step list
+.onboarding-panel__step-icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+  vertical-align: middle;
+} 

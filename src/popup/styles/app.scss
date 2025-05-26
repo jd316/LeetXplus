@@ -1,0 +1,12 @@
+.app {
+	/* Fill available side panel space and enable scrolling */
+	width: 100%;
+	min-height: 100vh; /* Use min-height to allow content to expand */
+	background-color: var(--bg-primary); /* Use the new primary background */
+	color: var(--text-primary);
+	overflow-y: auto;
+	box-sizing: border-box;
+	padding: var(--spacing-lg); /* Use spacing variables */
+	display: flex;
+	flex-direction: column;
+}
