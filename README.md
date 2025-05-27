@@ -61,7 +61,7 @@ Make sure you've added your API key under **Settings** before clicking **Solve i
 
 ---
 
-## Installation & Development
+## Developer Setup
 
 - Install dependencies:
 
